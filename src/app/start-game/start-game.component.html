@@ -1,0 +1,19 @@
+<div class="start-game-container">
+  <h2>Начало</h2>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Правила генерации</mat-label>
+    <mat-select [(ngModel)]="selectedRule" name="mode">
+      <mat-option *ngFor="let rule of rules;" [value]="rule">{{rule}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Кол-во пользователей</mat-label>
+    <mat-select [(ngModel)]="countUsers" name="userCount">
+      <mat-option *ngFor="let user of numberOfUsers;" [value]="user">{{user}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="generateTeams()">Генерация команд</button>
+</div>
